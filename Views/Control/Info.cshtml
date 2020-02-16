@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Info";
+    Layout = "_General";
+}
+
+<div class="container-fluid" style="background: white; color: #131313;">
+
+    <div class="row info-text">
+        <div class="col-md-1"></div>
+        <div class="col-12 col-md-6">
+            <h3>Que es Myfip?</h3>
+            <hr>
+            <p>Myfip es un aplicativo hecho con el fin de calcular tu ingreso mensual disponible.</p>
+            <p>Esta herramienta te ayudará a registrar cada uno de tus gastos mensuales con el fin de mostrarte cuánto dinero disponible te queda después de pagar todas tus cuentas.</p>
+            <p style="color: #D84E42;"><i class="fal fa-exclamation-triangle"></i> Esta aplicación no utilizará tu información con ningún tipo de beneficio, es importante que sepas que tu información no saldrá de nuestros servidores, y si decides eliminar tu cuenta, todos tus datos se eliminarán de forma inmediata y definitiva.</p>
+            <h5>¿Qué necesitas para registrarte?</h5>
+            <p>Para registrarte, lo único que necesita Myfip es tu nombre, ingreso mensual, dirección de correo electrónico y contraseña. Luego confirmar su correo electrónico para activar tu cuenta en Myfip.</p>
+            <p>Myfip almacena de forma segura en una base de datos toda tu información, ten en cuenta que solo se encripta tu contraseña. Tu información ya sea, ingresos, gastos, correo electrónico, se almacenan sin cifrado, lo que llegado al caso hipotético e improbable de que se vea comprometida nuestra base de datos, esos datos serían visibles.</p>
+            <p>Sin embargo, no estamos almacenando datos confidenciales como números de tarjeta de crédito o direcciones. Para nosotros es importante que sepas esto.</p>
+            <h5>No te enviaremos nada a tu correo</h5>
+            <p>Myfip no le enviará un solo correo electrónico (aparte de si restablece su contraseña o para confirmar su registro). </p>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h5>Funcionalidades</h5>
+                    <p><i class="fal fa-check-circle green"></i> Ver disponible</p>
+                    <p><i class="fal fa-check-circle green"></i> Gestionar cuentas por pagar</p>
+                    <p><i class="fal fa-check-circle green"></i> Gestionar ingresos </p>
+                    <p><i class="fal fa-check-circle green"></i> Actualizar información</p>
+                    <p><i class="fal fa-check-circle green"></i> Gestionar metas</p>
+                    <p><i class="fal fa-check-circle green"></i> Notificaciones</p>
+                    <p><i class="fal fa-check-circle green"></i> Envia peticiones, quejas y reclamos.</p>
+                    <p> &nbsp </p>
+                </div>
+                <div class="col">
+                    <h5>Proximamente</h5>
+
+                    <p><i style="color:#FF6900;" class="fal fa-wrench"></i> Archivar gastos</p>
+                    <p><i style="color:#FF6900;" class="fal fa-wrench"></i> Archivar ingresos</p>
+                    <p><i style="color:#FF6900;" class="fal fa-wrench"></i> Archivar metas</p>
+                    <p><i style="color:#FF6900;" class="fal fa-wrench"></i> Economia colaborativa (entre dos o tres usuarios)</p>
+                    <p><i style="color:#FF6900;" class="fal fa-wrench"></i> Enviar mensajes al colaborador</p>
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <h3>&nbsp;</h3>
+            <hr>
+            <h5>¿Tu moneda no está en la lista?</h5>
+            <p>Si desea agregar una moneda a la lista, simplemente hagamelo saber: <a href="https://api.whatsapp.com/send?phone=573145792755" target="_blank"><b><i class="fab fa-whatsapp" style="color:yellowgreen;"> </i> +57-3145792755</b>.</a> su moneda estará agregada lo más pronto posible.</p>
+            <hr>
+            <h5>Contacto</h5>
+            <p>Envia un mensaje al desarrollador, esperamos mejorar su experiencia en Myfip.</p>
+            <form action="" method="POST">
+                <div class="form-group">
+                    <input type="text" name="nombre_pqr" class="form-control" value="<?php echo $rows_user[2] ?>">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="email_pqr" class="form-control" value="<?php echo $rows_user[4] ?>" required readonly>
+                </div>
+                <div class="form-group col">
+                    <div class="row">
+                        <div class="form-check  col-3">
+                            <input class="form-check-input" type="radio" name="radio_tipo_pqr" id="inlineRadio1" value="peticion" checked>
+                            <label class="form-check-label" for="inlineRadio1">Petición</label>
+                        </div>
+                        <div class="form-check  col-3">
+                            <input class="form-check-input" type="radio" name="radio_tipo_pqr" id="inlineRadio1" value="queja">
+                            <label class="form-check-label" for="inlineRadio1">Queja</label>
+                        </div>
+                        <div class="form-check  col-3">
+                            <input class="form-check-input" type="radio" name="radio_tipo_pqr" id="inlineRadio1" value="reclamo">
+                            <label class="form-check-label" for="inlineRadio1">Reclamo</label>
+                        </div>
+                        <div class="form-check  col-3">
+                            <input class="form-check-input" type="radio" name="radio_tipo_pqr" id="inlineRadio1" value="sujerencia">
+                            <label class="form-check-label" for="inlineRadio1">Sujerencia</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea name="msm_pqr" class="form-control" id="" cols="30" rows="10" required placeholder="Escribe tu mensaje, por favor, trate de ser claro. Agradecemos sus observaciones, serán atendidas en el menor tiempo posible. Gracias!"></textarea>
+                </div>
+                <div class="form-group">
+                    <small><b>*su informacion personal no es obligatoria</b> </small>
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="send_pqr" class="btn btn-primary col-4 float-right" value="Enviar">
+                </div>
+                <div class="form-group">
+                    <div class="col sin_padding">
+                        <?php echo resultblock($errors); echo resultmensaje($mensajes);?>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">
+        <div class="col footer">
+            <p class="text-center">Por<a href="http://cristhianmendoza1000.000webhostapp.com/" target="_black"> Christian Mendoza</a></p>
+        </div>
+    </div>
+</v>

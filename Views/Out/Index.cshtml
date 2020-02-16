@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Inicio de Sesión";
+}
+
+    <form id="form1" runat="server">
+        <div class="header-text">
+            Olvidó su contraseña? <a href="https://localhost:44330/recover_pass.aspx">Clic Aqui!</a>
+        </div>
+        <div class="txtb">
+            <input type="text" name="usuario" placeholder="Usuario" required="" />
+        </div>
+        <div class="txt-pass">
+            <input type="password" name="contrasena" id="txtPassword" placeholder="Contraseña" required="" autocomplete="off" />
+        </div>
+        <div class="input-group-append">
+            <button id="show_password" class="btn-pass-m-o" style="margin-bottom:10px;" type="button" onclick="mostrarPassword()"> <span class="fal fa-eye-slash icon"></span> </button>
+        </div>
+        <input type="submit" class="logbtn" value="Ingresar" />
+        <div class="bottom-text">
+            No estas registrado? <a href="https://localhost:44330/register.aspx">Registrate</a>
+        </div>
+    </form>

@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>@ViewData["Title"] - Myfip</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Lato|Montserrat|Open+Sans|Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="~/js/menuresponsive.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" id="header_one">
+            <div class="col-7" style="padding-left:25px;">
+                <a  asp-area="" asp-controller="Out" asp-action="index">
+                    <img src="~/images/solo_wallet.png" alt="logo-myfip" class="img-fluid float-left" style="width:40px; margin-top:18px;">
+                </a>
+                <div class="content_status">
+                    <small class='small_status'>POR FAVOR</small>
+                    <p style='font-size:13px;'>Registra tus <a href='ingresos.php'> ingresos</a>!</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row float-right items-header">
+
+                    <div class="item-header-notif">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell" style="color: #DEC50E;"></i>
+                                <span class="label label-danger"></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <h5 style="color: #161827;" class="dropdown-header">No hay notificaciones</h5>
+                                <div class="section-notif">
+                                    <a href="notifications.php" style="border-bottom: 1px solid; font-size: small; color: #fff; white-space: normal; background: red;" class="dropdown-item"><i>&nbsp</i></a>
+                                </div>
+                                <center style="padding-top: inherit;"><a href="notifications.php?view_all=1" style="color:#161827;">Ver todas</a></center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-header-user">
+
+                        <a asp-area="" asp-controller="Control" asp-action="user" style="color:#f1f1f1;"><img src='~/images/img-user.jpg' alt='#' class='img-fluid img_user_min'></a>
+                    </div>
+                    <!-- <div class="item-header">
+                                <a  style="color:#f1f1f1;" href="info.php"><i class="fa fa-question-square"></i>
+                                </a>
+                            </div>
+                            <div class="item-header">
+                                <a  style="color:#f1f1f1;" href="logout.php"><i class="fa fa-sign-out-alt"></i></a>
+                            </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row content-menu">
+            <div class="col-md-1"></div>
+            <div class="col-12 col-sm-12 menu">
+                <nav>
+                    <ul>
+                        <li>
+                            <a asp-area="" asp-controller="Control" asp-action="bills">
+                                <i class="fal fa-usd-circle icons-menu"></i>
+                                <p>Gastos</p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a asp-area="" asp-controller="Control" asp-action="income">
+                                <i class="fal fa-check-circle icons-menu"></i>
+                                <p>Ingresos</p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a asp-area="" asp-controller="Control" asp-action="goals">
+                                <i class="fal fa-flag icons-menu"></i>
+                                <span class="label label-danger">&nbsp</span><p>Metas</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+        <!--<header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApplication1</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>-->
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

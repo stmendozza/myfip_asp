@@ -1,0 +1,98 @@
+﻿@{ 
+     ViewData["Title"] = "Bills";
+     Layout = "_General";
+}
+
+    <div class="control">
+        <div class="row">
+            <div class="col-xl-1"></div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-5 sin_padding">
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+                    <i class="fal fa-plus-square"></i>
+                    <p id="add-cuenta"></p>
+                </button>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-5 sin_padding">
+                <select class="select-option" name="order_cuentas" id="order_cuentas" style="float:right;">
+                    <option value="1">De menor a mayor costo</option>
+                    <option value="2">De mayor a menor costo</option>
+                    <option value="4">Por fecha más cercana</option>
+                    <option value="3">Alfabeticamente</option>
+                </select>
+            </div>
+            <div class="col-xl-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-1 "></div>
+            <div class="col-12 col-sm-12 col-md-12 col-xl-10 control-body table-responsive">
+                AQUI GASTOS
+            </div>
+            <div class="col-xl-1 "></div>
+        </div>
+    </div>
+
+<!--modal + Agregar cuenta por pagar-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel"><i class="fal fa-plus-square"></i> Agregar cuenta por pagar</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" method="POST">
+                        <div class="form-group">
+                            <div class="col-12">
+                                <select name="cuenta" class="col select-option">
+                                    <option value="arriendo">Arriendo</option>
+                                    <option value="alimentacion">Alimentacion</option>
+                                    <option value="transporte">Transporte</option>
+                                    <option value="estudios">Estudios</option>
+                                    <option value="ropa">Ropa</option>
+                                    <option value="gadgets_electronicos">Gadgets electrónicos</option>
+                                    <option value="triple_play">Triple Play</option>
+                                    <option value="factura_internet">Factura de Internet</option>
+                                    <option value="factura_fijo">Factura de Fijo</option>
+                                    <option value="factura_movil">Factura de Movíl</option>
+                                    <option value="factura_energia">Factura de Energia</option>
+                                    <option value="factura_agua">Factura de Agua</option>
+                                    <option value="factura_gas">Factura de Gas</option>
+                                    <option value="netflix">Netflix</option>
+                                    <option value="giro">Giro</option>
+                                    <option value="deuda">Deuda</option>
+                                    <option value="tarjeta_de_credito">Tarjeta de Credito</option>
+                                    <option value="impuestos">Impuestos</option>
+                                    <option value="prestamos">Prestamos</option>
+                                    <option value="hipoteca">Hipoteca</option>
+                                    <option value="factura_tv">Factura TV</option>
+                                    <option value="aseguradora">Aseguradora</option>
+                                    <option value="otros_gastos">Otros Gastos</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <textarea class="form-control" placeholder="Descripción" name="descripcion"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="number" class="form-control" name="costo" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label for="fecha_pago">Opcional</label>
+                                <input type="date" class="form-control" name="fecha_pago">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" id="actualizar_datos" name="add_cuenta">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>

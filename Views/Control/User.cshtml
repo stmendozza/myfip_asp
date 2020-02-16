@@ -1,0 +1,151 @@
+﻿@{
+    ViewData["Title"] = "User";
+    Layout = "_General";
+}
+
+<div class="container">
+    <div class="row panel-user">
+        <div class="col-xl-2"></div>
+        <div class="col-12 col-md-6 col-xl-4">
+            <div class="badge badge-dark">
+                <p style="margin-bottom:0;"> Actualizar datos</p>
+                <!--<i class="fa fa-circle green"> &nbsp</i><?php echo $usuario ?>-->
+            </div>
+            <hr>
+            <form action="" method="POST" autocomplete="off">
+                <div class="form-group ">
+
+                    <input type="text" class="form-control col" name="nombre" value="" required="">
+                </div>
+
+                <div class="form-group" style="display:flex;">
+                    <select class="select-option col" type="number" name="moneda" required autocomplete="off" style="width:100%;">
+                        
+                        <option value='1' selected>COP : Pesos Colombianos</option>
+                        <option value='2'>MXN : Pesos Mexicanos</option>
+                        <option value='3'>USD : Dolares Estadounidenses</option>
+                        <option value='4'>CLP : Pesos Chilenos</option>
+                       
+                    </select>
+                </div>
+                <i class="fa fa-check-circle green"> </i><label for="email"> &nbsp Verificardo</label> 
+                <div class="form-group">
+                    <input type="email" class="form-control col" name="email" value="" required="" readonly>
+                </div>
+                <div class="form-group">
+                    <button name="form_actu" type="submit" class="col btn btn-primary"><span class="fal fa-sync-alt "></span> Actualizar perfil</button>
+                </div>
+                <center><?php resultblock($errors); resultmensaje($mensajes); ?></center>
+            </form>
+            <hr>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <div class="badge badge-dark">
+                <p style="margin-bottom:0;"> Seguridad</p>
+            </div>
+            <hr>
+            <button type="button" class="col-12 btn btn-dark" data-toggle="modal" data-target="#myModal2"><span class="fal fa-lock"></span> Cambiar contraseña </button>
+            <hr>
+            <center><?php resultblock($errors_pass); resultmensaje($mensajes_pass); ?></center>
+
+            <div class="badge badge-dark">
+                <p style="margin-bottom:0;"> Cuenta</p>
+            </div>
+            <hr>
+            <button type="button" class="col-12 btn btn-light" style="border: 0.5px solid;" data-toggle="modal" data-target="#myModal_email"><span class="fal fa-envelope"></span> Cambiar email </button>
+            <center><?php resultblock($errors_email); resultmensaje($mensajes_email); ?></center>
+
+            <hr><hr>
+            <button type="button" class="col-12 btn btn-danger" style="border: 0.5px solid;" data-toggle="modal" data-target="#Modal_delete_account"><span class="fal fa-trash-alt" style="color:#f1f1f1;"></span> Eliminar cuenta</button>
+        </div>
+        <div class="col-xl-2"></div>
+    </div>
+</div>
+<!-- ModalUser -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><i class="fal fa-edit"></i> Actualizar contraseña</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="POST" action="">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" placeholder="Contraseña actual" name="actualpass">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" placeholder="Nueva contraseña " name="nuevapass" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" placeholder="Confirma nueva contraseña" name="confirmapass">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" id="actualizar_datos" name="actu_pass">Actualizar contraseña</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Email -->
+<div class="modal fade" id="myModal_email" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><i class="fal fa-edit"></i> Cambiar email</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="POST" action="">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" placeholder="Nuevo email" name="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" placeholder="Confirma email" name="con_email" required="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" name="confirma_email">Actualizar email</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Delete Account -->
+<div class="modal fade" id="Modal_delete_account" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><i class="fal fa-trash-alt"></i> Eliminar mi cuenta</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label for=""><?php echo ucwords($usuario);?>, estas segur de eliminar tu cuenta, recuerda que <b>todos tus datos seran borrados de nuestra base datos para siempre</b>.</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <input type="submit" class="btn btn-danger" name="delete_account" value="Eliminar mi cuenta" />
+            </div>
+        </div>
+    </div>
+</div>
